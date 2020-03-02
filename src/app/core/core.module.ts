@@ -1,11 +1,12 @@
-import { CommonModule } from '@angular/common';
-import { NgModule, Optional, SkipSelf } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { MaterialModule } from '../material/material.module';
-import { SharedModule } from '../shared/shared.module';
-import { ModalComponent } from './modal/modal.component';
-import { throwIfAlreadyLoaded } from './module-import-check';
-import { ToolbarComponent } from './toolbar/toolbar.component';
+import { CommonModule } from "@angular/common";
+import { NgModule, Optional, SkipSelf } from "@angular/core";
+import { RouterModule } from "@angular/router";
+import { MaterialModule } from "../material/material.module";
+import { SharedModule } from "../shared/shared.module";
+import { ModalComponent } from "./modal/modal.component";
+import { throwIfAlreadyLoaded } from "./module-import-check";
+import { ToolbarComponent } from "./toolbar/toolbar.component";
+import { FooterComponent } from "./footer/footer.component";
 
 @NgModule({
   imports: [
@@ -14,7 +15,7 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
     MaterialModule,
     RouterModule // because we use <router-outlet> and routerLink
   ],
-  declarations: [ModalComponent, ToolbarComponent],
+  declarations: [ModalComponent, ToolbarComponent, FooterComponent],
   exports: [ToolbarComponent],
   entryComponents: [ModalComponent]
 })
@@ -24,6 +25,6 @@ export class CoreModule {
     @SkipSelf()
     parentModule: CoreModule
   ) {
-    throwIfAlreadyLoaded(parentModule, 'CoreModule');
+    throwIfAlreadyLoaded(parentModule, "CoreModule");
   }
 }

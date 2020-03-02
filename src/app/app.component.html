@@ -1,6 +1,7 @@
 <div class="layout">
-  <app-toolbar></app-toolbar>
-  <div class="content">
+  <router-outlet name="header"></router-outlet>
+  <main class="content">
     <router-outlet></router-outlet>
-  </div>
+  </main>
+  <router-outlet name="footer"></router-outlet>
 </div>
